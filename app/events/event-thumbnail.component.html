@@ -1,0 +1,19 @@
+<div [routerLink]="['/events', singleEvent.id]" *ngIf="singleEvent" class="well hoverwell thumbnail">
+    <h2>{{ singleEvent.name }}</h2>
+    <div>Date: {{ singleEvent.date }}</div>
+    <div [ngSwitch]="singleEvent?.time">
+        Time: {{ singleEvent.time }}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </div>    
+    <div>Price: ${{ singleEvent.price }}</div>
+    <div *ngIf="singleEvent?.location"><span>
+            Location: {{ singleEvent.location.address }} </span>
+            <span class="pad-left"> {{ singleEvent.location.city }}, {{ singleEvent.location.country }}
+            </span>
+    </div>
+    <div *ngIf="singleEvent?.onlineUrl">
+        Online URL: {{ singleEvent.onlineUrl }}
+    </div>
+</div>
