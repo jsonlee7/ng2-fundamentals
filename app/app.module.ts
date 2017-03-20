@@ -16,11 +16,15 @@ import {
     CreateSessionComponent,
     EventRouteActivator
 } from './events/index';
+
+import {
+ToastrService,
+CollapsibleWellComponent
+} from './common/index';
  
 import { NavBarComponent } from './nav/nav-bar.component';
 import { Error404Component } from './errors/404.component';
 import { EventService } from './events/shared/event.service';
-import { ToastrService } from './common/toastr.service';
 import { AuthService } from './user/index';
 
 import { appRoutes } from './routes';
@@ -42,7 +46,8 @@ import { appRoutes } from './routes';
         CreateEventComponent,
         CreateSessionComponent,
         Error404Component,
-        NavBarComponent],
+        NavBarComponent,
+        CollapsibleWellComponent],
     providers: [
         EventService,
         EventRouteActivator,
